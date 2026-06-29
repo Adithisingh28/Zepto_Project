@@ -16,43 +16,6 @@ This project involves designing and analyzing a relational database for **Zepto*
 - pgAdmin 4
 - SQL (DDL, DML, joins, aggregations, window functions)
 
-## Database Schema
-
-```sql
-CREATE TABLE zepto(
-  sku_id SERIAL PRIMARY KEY,
-  category VARCHAR(120),
-  name VARCHAR(150) NOT NULL,
-  mrp NUMERIC(8,2),
-  discountPercent NUMERIC(5,2),
-  availableQuantity INTEGER,
-  discountedSellingPrice NUMERIC(8,2),
-  weightInGms INTEGER,
-  outOfStock BOOLEAN,
-  quantity INTEGER
-);
-```
-
-| Column | Description |
-|---|---|
-| `sku_id` | Unique identifier for each product (Primary Key) |
-| `category` | Product category (e.g., Fruits, Dairy, Snacks) |
-| `name` | Product name |
-| `mrp` | Maximum Retail Price |
-| `discountPercent` | Discount percentage applied |
-| `discountedSellingPrice` | Final selling price after discount |
-| `availableQuantity` | Units currently in stock |
-| `weightInGms` | Product weight in grams |
-| `outOfStock` | Stock availability flag |
-| `quantity` | Order/package quantity |
-
-## Business Questions Explored
-- Which categories offer the highest average discounts?
-- What is the revenue loss due to out-of-stock SKUs?
-- Which products have the best price-per-gram value?
-- How does discount percentage vary with MRP across categories?
-- What's the distribution of stock availability by category?
-
 ## How to Run
 1. Create the database and run the schema script above in pgAdmin 4 / psql.
 2. Import the dataset (CSV) into the `zepto` table.
